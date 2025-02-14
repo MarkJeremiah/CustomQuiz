@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz for a Date 💖</title>
+    <link rel="stylesheet" href="css/quiz.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>
+                <i class="fa-solid fa-heart animated-heart"></i> Welcome to Quiz for a Date
+            </h1>
+            <p>This quiz app is made just for you.💖</p>
+            <button class="start-btn" onclick="openStartModal()">
+                Start Quiz <i class="fa-solid fa-play"></i>
+            </button>
+        </div>
+        <img src="assets/tonibear-bear.gif" alt="Toni Bear" class="valentine-gif">
+    </div>
+    
+    <img src="assets/cute-mochi-mochi.gif" alt="Animated GIF" class="large-gif" id="quizGif">
+
+
+    <div class="quiz-container" style="display: none;">
+        <h2 id="question">
+            <i class="fa-solid fa-question-circle"></i> Question
+        </h2>
+        <div id="options">
+            <button class="option-btn" onclick="selectOption(0)">Option 1</button>
+            <button class="option-btn" onclick="selectOption(1)">Option 2</button>
+            <button class="option-btn" onclick="selectOption(2)">Option 3</button>
+            <button class="option-btn" onclick="selectOption(3)">Option 4</button>
+        </div>
+    </div>
+
+    <!-- Start Quiz Modal -->
+    <div class="modal-overlay" id="startOverlay"></div>
+    <div class="modal" id="startModal">
+        <h2>
+            <i class="fa-solid fa-bell animated-bell"></i> Are you ready?
+        </h2>
+        <p>This quiz is all about me. Answer correctly <br> and see what happens! 😉</p><br>
+        <button onclick="startQuiz()">Start Now <i class="fa-solid fa-play"></i></button>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal-overlay" id="resultOverlay"></div>
+    <div class="modal" id="resultModal">
+        <h2 id="resultMessage">
+            <i class="fa-solid fa-check"></i>
+        </h2>
+        <button onclick="closeModal()">OK <i class="fa-solid fa-thumbs-up"></i></button>
+    </div>
+
+    <div id="correctModal" class="modal">
+        <div class="modal-content">
+            <h3 id="correctMessage">🎉 You're right! I knew you knew it! 💖</h3>
+            <button onclick="closeCorrectModal()">Next Question </button>
+        </div>
+    </div>
+    <div id="correctOverlay" class="overlay"></div>
+
+    <!-- Valentine Proposal Section -->
+    <div class="valentine-container" id="valentineSection" style="display: none;">
+        <h2>Will you be my Valentine? 💖</h2>
+        <div class="button-group">
+            <button class="yes-btn" onclick="sayYes()">Yes! 💘</button>
+            <button class="no-btn" id="noBtn" onmouseover="moveNoButton()">No 🙈</button>
+        </div>
+    </div>
+
+    <!-- Valentine Modal -->
+    <div class="modal-overlay" id="valentineOverlay"></div>
+    <div class="modal" id="valentineModal">
+        <div class="modal-content">
+            <div class="text-container">
+                <h2>Yay! I knew you'd say yes! 🥰</h2>
+                <p>You just made my day! Happy Valentine's!</p>
+                <button onclick="closeValentineModal()">Aww! 😘</button>
+            </div>
+            <img src="assets/strawberry-shortcake.gif" alt="Animated GIF" class="my-gif" id="loveGif">
+        </div>
+    </div>
+
+    <!-- Heart-Winning Modal -->
+    <div id="heartOverlay"></div>
+    <div id="heartModal">
+        <div id="heartIcon">❤️</div>
+        <p>You just won my heart!</p>
+        <button id="closeHeartBtn" onclick="closeHeartModal()">Close</button>
+    </div>
+
+    <img src="assets/erm-fingers.gif" alt="Animated GIF" class="my-gif" id="myGif">
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
